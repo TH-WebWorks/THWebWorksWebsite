@@ -165,7 +165,7 @@ function initSmoothScrolling() {
 
 // Scroll animations using Intersection Observer
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.service-card, .project-card, .before-after-card, .testimonial-card, .process-card, .about-content > *, .contact-content > *');
+    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content > *, .contact-content > *');
     
     const observerOptions = {
         threshold: 0.1,
@@ -191,24 +191,14 @@ function initScrollAnimations() {
 
     // Stagger animation for service cards and portfolio items
     const serviceCards = document.querySelectorAll('.service-card');
-    const projectCards = document.querySelectorAll('.project-card');
-    const processCards = document.querySelectorAll('.process-card');
-    const beforeAfterCards = document.querySelectorAll('.before-after-card');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
     
     serviceCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
     
-    projectCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.08 + 0.15}s`;
-    });
-
-    processCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.08 + 0.2}s`;
-    });
-
-    beforeAfterCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1 + 0.25}s`;
+    portfolioItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.15}s`;
     });
 }
 
